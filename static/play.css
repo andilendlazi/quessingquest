@@ -1,0 +1,38 @@
+body{
+    background-color: #ADBBDA;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: x-large;
+    text-align: center;
+}
+@media screen and (min-width:1024px){
+    .container{
+        width: 60%;
+    }
+    
+}
+
+@media  screen and (min-width:768px) and (max-width:1023px) {
+    .container{
+        width: 70%;
+    }
+
+}
+
+@media screen and (max-width:767px) {
+    .container{
+        width: 90%;
+        padding: 10px;
+    }
+    
+}
+h1{
+    color: black;
+}
+
+p{
+    color: black;
+}
+
+a{
+    color: black;
+}
