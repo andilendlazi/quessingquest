@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Category</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">GuessQuest</div>
+        <div class="hamburger" aria-label="Toggle Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul class="nav-menu">
+            <li><a href="/">Home</a></li>
+            <li><a href="#game-description">About</a></li>
+            <li class="dropdown">
+                <a href="#category-container">Categories</a>
+                <ul class="dropdown-menu">
+                    <li><a href="http://127.0.0.1:5000/start">Countries</a></li>
+                    <li><a href="http://127.0.0.1:5000/start">Football Clubs</a></li>
+                </ul>
+            </li>
+            <li><a href="https://www.andilendlazi3@gmail.com" target="_blank">Contact</a></li>
+            
+        </ul>
+    </nav>
+
+    <div id="game-description" class="game-description">
+        <h1>Welcome to a Guessing Game!</h1>
+        <p>Test your knowledge about countries and football clubs.<br>
+            Choose a category and guess from the facts.<br>
+            See if you can get them all right!</p>
+    </div>
+    <div id="category-container" class="category-container">
+        <div class="category-card">
+            <img src="{{ url_for('static', filename='imageseurope.jpeg') }}" alt="Countries">
+            <h2>Countries</h2>
+            <p>Casual - Free</p>
+            <form action="{{ url_for('start_game') }}" method="post">
+                <input type="hidden" name="category" value="Country">
+                <button type="submit">Play Now</button>
+            </form>
+        </div>
+        <div class="category-card">
+            <img src="{{ url_for('static', filename='output (2).jpg') }}" alt="Football Clubs">
+            <h2>Football Clubs</h2>
+            <p>Adventure - Free</p>
+            <form action="{{ url_for('start_game') }}" method="post">
+                <input type="hidden" name="category" value="Football Club">
+                <button type="submit">Play Now</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <div class="about">
+            <p>
+                <br>
+                How It Works:<br>
+                Select a category:<br>
+                Read a clue or hint, and guess the correct answer.<br>
+                You have to tries to guess the category from the ten hints provided.<br>
+                Play for fun and challenge yourself to get them all right!<br>
+                <br>
+                This project is a fun blend of education and entertainment, making it ideal for geography enthusiasts, football fans, and trivia lovers alike.<br>
+                Whether you're brushing up on world knowledge or just looking for a casual game, this platform offers something for everyone.<br>
+            </p>
+        </div>
+        <div class="contact">
+            <p>
+                Contact:<br>
+                <a href="https://www.andilendlazi3@gmail.com" target="_blank">andilendlazi3@gmail.com</a>
+            </p>
+        </div>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/andile.ndlanzi.9?mibextid=ZbWKwL" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-facebook"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/andile-ndlazi-75587b266" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-linkedin"></i>
+            </a>
+            <a href="https://www.instagram.com/antonia.andile/profilecard/?igsh=MWxvdnJ2MHlxendtOQ==" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href=" https://github.com/andilendlazi" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-github"></i>
+            </a>
+        </div>
+
+        <div class="company">
+            <a>© 2024 GuessQuest. All rights reserved</a>
+
+        </div>
+        
+    </footer>
+
+
+    <script>
+        const hamburger = document.querySelector(".hamburger");
+        const navMenu = document.querySelector(".nav-menu");
+
+        hamburger.addEventListener("click", () => {
+            hamburger.classList.toggle("active");
+            navMenu.classList.toggle("active");
+        });
+
+        document.querySelectorAll(".nav-menu a").forEach(link => 
+            link.addEventListener("click", () => {
+                hamburger.classList.remove("active");
+                navMenu.classList.remove("active");
+            })
+        );
+    </script>
+</body>
+</html>
